@@ -1,0 +1,66 @@
+<% include menu %>
+<% include slider %>
+
+	<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>View Sub-Categories</h2>
+			</div>
+			<style>
+			#mycat
+			{
+				height:450px;
+				width:600px;
+			}
+
+			#mycat1
+			{
+				height:150px;
+				width:200px;
+				float:left;
+			}
+			</style>
+
+			<div id="mycat">
+				<% for(i=0;i<mycat.length;i++){ %>
+				<a href="/viewsubcat/<%= mycat[i].sub_cat_img %>">
+				<div id="mycat1">
+					<center><img src="../uploads/<%= mycat[i].sub_cat_img %>" height="100" width="150">
+					<br>
+					<b>
+					<%= mycat[i].sub_cat_nm %>
+					</b>
+					</center>
+				</div>
+				</a>
+				<% } %> 
+			</div>
+		</div>
+
+		<div id="sidebar">
+			<div class="box">
+				<h3>Category List</h3>
+				<ul class="list">
+					<% for(i=0;i<cat.length;i++){ %>
+					<li><%= cat[i].cat_nm %></li>
+					<% } %>
+				</ul>
+			</div>
+			<div class="box">
+				<h3>Activity Log</h3>
+				<div class="date-list">
+					<ul class="list date-list">
+						<li class="first"><span class="date">24/06</span> <a href="#">Project Started</a></li>
+						<li><span class="date">24/06</span> <a href="#">Template Installed</a></li>
+						<li><span class="date">24/06</span> <a href="#">Template Edited</a></li>
+						<li class="last"><span class="date">24/06</span> <a href="#">UI Completed</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<br class="clearfix" />
+	</div>
+	
+<% include pagebottom %>
+
+
